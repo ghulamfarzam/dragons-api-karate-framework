@@ -8,7 +8,6 @@ Feature: get all plan
     Then status 200
     And print response
     * def generatedToken = response.token
-    
 
   Scenario: 
     Given path "/api/plans/get-all-plan-code"
