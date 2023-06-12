@@ -1,15 +1,12 @@
 Feature: get all plan
 
   Background: API Test Setup
+    * def result = callonce read('GenerateToken.feature')
+    And print result
+    * def generatedToken = result.response.token
     Given url "https://tek-insurance-api.azurewebsites.net"
-    And path "/api/token"
-    And request {"username": "supervisor", "password": "tek_supervisor"}
-    When method post
-    Then status 200
-    And print response
-    * def generatedToken = response.token
 
-  Scenario: 
+  Scenario: get all plan code API
     Given path "/api/plans/get-all-plan-code"
     And header Authorization = "Bearer " + generatedToken
     When method get
