@@ -8,7 +8,7 @@
 #one you create account validate database and take screenshot
 #
 
-@Regression
+
 Feature: Creating Account Test
 
   Background: API Test Setup
